@@ -56,10 +56,10 @@ Here, `result` is annotated as an `int`, making it clear that it should hold an 
 
 [Mypy](http://mypy-lang.org/) is a powerful static type checker for Python that helps you catch type-related errors in your code. Here's how to use it:
 
-1. Install Mypy using pip:
+1. Install mypy using pip:
 
    ```
-   pip install mypy
+   python3 -m pip install mypy
    ```
 
 2. Add type annotations to your Python code, specifying variable types, function signatures, etc.
