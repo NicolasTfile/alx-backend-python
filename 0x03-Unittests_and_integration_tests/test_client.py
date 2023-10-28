@@ -61,10 +61,10 @@ class TestGithubOrgClient(unittest.TestCase):
     class_name="TestIntegrationGithubOrgClient"
 )
 class TestIntegrationGithubOrgClient(unittest.TestCase):
-    '''testing GithubOrgClient.public_repos method in an integration test'''
+    """testing GithubOrgClient.public_repos method in an integration test"""
     @classmethod
     def setUpClass(cls):
-        '''Mock requests.get to return example payloads found in fixtures'''
+        """Mock requests.get to return example payloads found in fixtures"""
         super().setUpClass()
         get_patcher = patch('requests.get')
         cls.mock_get = get_patcher.start()
@@ -77,12 +77,12 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        '''Stop the patcher'''
+        """Stop the patcher"""
         super().tearDownClass()
         cls.mock_get.stop()
 
     def test_public_repos(self):
-        '''method to test GithubOrgClient.public_repos'''
+        """method to test GithubOrgClient.public_repos"""
         # Act
         github_org_client = GithubOrgClient('google')
         actual_repos = github_org_client.public_repos()
@@ -91,10 +91,13 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         self.assertEqual(actual_repos, expected_repos)
 
     def test_public_repos_with_license(self):
-        '''test the public_repos with the argument license="apache-2.0"'''
+        """test the public_repos with the argument apache-2.0"""
         # Act
         github_org_client = GithubOrgClient('google')
         actual_repos = github_org_client.public_repos(license='apache-2.0')
 
         # Assert
         self.assertEqual(actual_repos, apache2_repos)
+
+if __name__ == "__main__":
+    unittest.main()
