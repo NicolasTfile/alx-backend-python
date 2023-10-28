@@ -99,5 +99,6 @@ class TestIntegrationGithubOrgClient(unittest.TestCase):
         # Assert
         self.assertEqual(actual_repos, apache2_repos)
 
+
 if __name__ == "__main__":
     unittest.main()
